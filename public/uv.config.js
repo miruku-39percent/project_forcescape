@@ -1,7 +1,7 @@
 /*global Ultraviolet*/
 self.__uv$config = {
     prefix: '/service/',
-    bare: 'http://localhost:8080/bare/',
+    bare: 'https://proxy.whyspace.click/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/uv.handler.js',
