@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
-import { url } from "../commonState";
+import { inputURL, url } from "../commonState";
 
 const webRef = ref<HTMLIFrameElement | null>(null);
 const webTitle = ref("");
+const iframeLoading = ref(true);
 const router = useRouter();
 
 onMounted(() => {
   if (!webRef.value) return;
   webRef.value.onload = () => {
     if (!webRef.value) return;
+    iframeLoading.value = false;
     webTitle.value =
       webRef.value.contentWindow?.document.title ||
       // @ts-expect-error
@@ -21,6 +23,7 @@ onMounted(() => {
 
 const handleClose = () => {
   router.push({ name: "Home" });
+  inputURL.value = "";
 };
 </script>
 
@@ -64,7 +67,11 @@ const handleClose = () => {
       </button>
     </div>
   </div>
+  <div class="w-screen h-[calc(100vh-45px)] grid grid-flow-col place-content-center" v-if="iframeLoading">
+    <span v-for="item in 4" :key="item" class="loading loading-ball loading-md" />
+  </div>
   <iframe
+    v-show="!iframeLoading"
     id="webIframe"
     :src="url"
     class="w-screen h-[calc(100vh-45px)]"
