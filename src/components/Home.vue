@@ -19,7 +19,7 @@ const handleSubmitLink = () => {
   <div class="w-screen h-screen grid place-content-center">
     <div class="w-[500px] flex flex-col items-center gap-y-4">
       <div class="text-4xl font-bold text-center text-teal-400">
-        <h1>Waifu Space</h1>
+        <h1>WhySpace</h1>
       </div>
       <div class="form-control w-full">
         <input
