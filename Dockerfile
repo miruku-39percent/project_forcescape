@@ -19,7 +19,7 @@ COPY . .
 RUN npm run build
 
 # Use an Nginx server to serve the application
-FROM nginx:1.19.0-alpine
+FROM nginx:1.27.2-alpine
 
 # Copy the built application files from the parent image
 COPY --from=0 /app/dist /usr/share/nginx/html
