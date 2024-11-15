@@ -10,6 +10,8 @@ COPY package*.json ./
 # Install any needed packages
 RUN npm install
 
+COPY yarn.lock ./
+
 # Copy the rest of the application code into the working directory
 COPY . .
 
