@@ -21,4 +21,6 @@ async function handleRequest(event) {
 }
 
 
-self.addEventListener("fetch", (event) => {event.respondWith(handleRequest(event));});
+self.addEventListener("fetch", (event) => {
+	event.respondWith(handleRequest(event));
+});
