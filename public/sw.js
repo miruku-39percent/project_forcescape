@@ -10,11 +10,11 @@ importScripts('uv.client.js');
 importScripts('uv.config.js');
 importScripts(__uv$config.sw || 'uv.sw.js');
 
-const sw = new UVServiceWorker();
+const uv = new UVServiceWorker();
 
 async function handleRequest(event) {
-	if (sw.route(event)) {
-		return await sw.fetch(event);
+	if (uv.route(event)) {
+		return await uv.fetch(event);
 	}
 
 	return await fetch(event.request);
