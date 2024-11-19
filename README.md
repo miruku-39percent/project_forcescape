@@ -1,5 +1,5 @@
 This is a FORK PROJECT.Created by @nikethai originally.thx him.
-Inseted sth to let she work.
+Inseted sth to let it work.
 
 
 
